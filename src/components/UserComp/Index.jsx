@@ -46,6 +46,8 @@
 //     []
 //   );
 
+//   console.log(initialNodes);
+
 //   return (
 //     <Box>
 //       <Grid container justifyContent={"space-between"}>
@@ -95,7 +97,7 @@ export default function Index() {
     const allNodes = accordions.flatMap((accordion) =>
       accordion.columns.map((column, i) => ({
         id: i + 1,
-        data: { label: column.title, type: column.type },
+        data: { label: column.title },
         position: {
           x: Math.random() * window.innerWidth,
           y: Math.random() * window.innerHeight,
@@ -111,7 +113,7 @@ export default function Index() {
     setEdges((eds) => applyEdgeChanges(changes, eds));
   const onConnect = (params) => setEdges((eds) => addEdge(params, eds));
 
-  console.log(accordions);
+  console.log(nodes);
 
   return (
     <Box>
